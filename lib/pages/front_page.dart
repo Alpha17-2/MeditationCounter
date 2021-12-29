@@ -11,14 +11,14 @@ class FrontPage extends StatelessWidget {
           child: Column(
         children: [
           const SizedBox(
-            height: 50,
+            height: 35,
           ),
           Text(
             "Meditation's \n Counter",
             textAlign: TextAlign.center,
             style: GoogleFonts.lato(
               fontWeight: FontWeight.bold,
-              fontSize: 35,
+              fontSize: 40,
             ),
           ),
           Stack(
@@ -30,26 +30,35 @@ class FrontPage extends StatelessWidget {
                     fit: BoxFit.cover),
               ),
               Positioned(
-                // top: MediaQuery.of(context).size.width * 0.002,
                 child: Container(
                   padding: const EdgeInsets.all(40.0),
-                  child: Image.asset("lib/assets/images/yoga.png"),
-                  margin: const EdgeInsets.only(top: 104),
+                  // child: Image.asset("lib/assets/images/yoga.png"),
+                  child: Image.asset("lib/assets/images/yogafinal.png"),
+                  margin: const EdgeInsets.only(top: 145),
                 ),
               ),
             ],
           ),
+          Text(
+            "A Perfect Time \nFor A Bit of Relax \nAnd Chanting Chill",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.lato(
+              fontWeight: FontWeight.w900,
+              fontSize: 20,
+            ),
+          ),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           ElevatedButton(
             onPressed: () {},
             child: const Text(
               "Let's Start",
-              style: TextStyle(fontSize: 20,color: Colors.black),
+              style: TextStyle(fontSize: 20, color: Colors.black),
             ),
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.white),
+              backgroundColor: MaterialStateProperty.all(
+                  const Color.fromARGB(255, 115, 128, 121)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18.0),
