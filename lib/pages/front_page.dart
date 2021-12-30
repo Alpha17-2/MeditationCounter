@@ -1,3 +1,4 @@
+import 'package:counter/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -29,7 +30,9 @@ class FrontPage extends StatelessWidget {
                 child: Image.asset("lib/assets/images/tree.png",
                     fit: BoxFit.cover),
               ),
-              Positioned(
+              AnimatedPositioned(
+                
+                duration: const Duration(seconds: 1),
                 child: Container(
                   padding: const EdgeInsets.all(40.0),
                   // child: Image.asset("lib/assets/images/yoga.png"),
@@ -51,7 +54,7 @@ class FrontPage extends StatelessWidget {
             height: 10,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => Navigator.pushNamed(context, MyRoutes.loginRoute),
             child: const Text(
               "Let's Start",
               style: TextStyle(fontSize: 20, color: Colors.black),
