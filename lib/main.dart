@@ -1,3 +1,5 @@
+import 'package:counter/pages/login_page.dart';
+import 'package:counter/utils/routes.dart';
 import 'package:flutter/material.dart';
 import './pages/front_page.dart';
 
@@ -15,6 +17,8 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       routes: {
         "/": (context) => const FrontPage(),
+        MyRoutes.loginRoute: (context) => const LoginPage(),
+        
       },
     );
   }
