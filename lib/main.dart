@@ -1,3 +1,4 @@
+import 'package:counter/pages/counter_page.dart';
 import 'package:counter/pages/login_page.dart';
 import 'package:counter/utils/routes.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => const FrontPage(),
         MyRoutes.loginRoute: (context) => const LoginPage(),
-        
+        MyRoutes.counterRoute: (context) => const CounterPage(),
       },
     );
   }
