@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:counter/utils/routes.dart';
 import 'package:flutter/material.dart';
@@ -126,7 +125,7 @@ class _FrontPageState extends State<FrontPage>
           TranslationAnimatedWidget(
             enabled: true,
             values: const [Offset(0, 200), Offset(0, 250), Offset(0, 0)],
-            duration: Duration(seconds: 4),
+            duration: const Duration(seconds: 4),
             child: ElevatedButton(
               onPressed: () =>
                   Navigator.pushNamed(context, MyRoutes.loginRoute),
