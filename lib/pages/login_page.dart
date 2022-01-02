@@ -32,14 +32,6 @@ class _LoginPageState extends State<LoginPage>
   String password = "";
   bool changedButton = false;
   final _formKey = GlobalKey<FormState>();
-  void _trySubmitForm() {
-    final isValid = _formKey.currentState!.validate();
-    if (isValid) {
-      print("Everything looks good");
-      print(name);
-      print(password);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
