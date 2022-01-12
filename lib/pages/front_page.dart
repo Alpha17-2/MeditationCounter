@@ -74,7 +74,7 @@ class _FrontPageState extends State<FrontPage>
                         fit: BoxFit.cover),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(top: 230, left: 128),
+                    margin: const EdgeInsets.only(top: 230, left: 118),
                     alignment: Alignment.center,
                     width: 160,
                     height: 160,
