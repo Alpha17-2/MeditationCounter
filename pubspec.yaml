@@ -39,6 +39,8 @@ dependencies:
   animated_widgets: ^1.1.0
   avatar_glow: ^2.0.2
   percent_indicator: ^3.4.0
+  lottie: ^1.2.1
+  animated_text_kit: ^4.2.1
 
 flutter_icons:
   image_path: "lib/assets/images/meditationapp.png"
