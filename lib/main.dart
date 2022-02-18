@@ -1,4 +1,5 @@
 import 'package:counter/pages/firstPage.dart';
+import 'package:counter/pages/pageOne.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FirstPage(),
+      home: PageOne(),
     );
   }
 }
