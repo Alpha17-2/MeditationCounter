@@ -41,7 +41,7 @@ class FirstPage extends StatelessWidget {
                   ),
                   Positioned.fill(
                     child: Align(
-                      alignment: Alignment(1.3, 1.35),
+                      alignment: const Alignment(1.3, 1.35),
                       child: Row(
                         children: [
                           SizedBox(

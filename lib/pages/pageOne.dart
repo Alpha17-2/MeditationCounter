@@ -1,8 +1,11 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:counter/pages/login_page.dart';
+import 'package:counter/models/user.dart' as model;
+import 'package:counter/pages/pageTwo.dart';
+import 'package:counter/providers/userProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 
 class PageOne extends StatefulWidget {
   const PageOne({Key? key}) : super(key: key);
@@ -13,12 +16,14 @@ class PageOne extends StatefulWidget {
 
 class _PageOneState extends State<PageOne> {
   bool _isElevated = true;
+
+  
   @override
   Widget build(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
     var deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.grey.shade400,
+      backgroundColor: Colors.grey.shade200,
       body: SafeArea(
         child: Container(
             height: double.infinity,
@@ -35,7 +40,7 @@ class _PageOneState extends State<PageOne> {
                       fontSize: MediaQuery.of(context)
                           .textScaleFactor
                           .clamp(deviceWidth * 0.145, deviceWidth * 0.2),
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.w900),
                 ),
                 //Lottie Image
                 Stack(
@@ -100,9 +105,11 @@ class _PageOneState extends State<PageOne> {
                     setState(() {
                       _isElevated = !_isElevated;
                     });
-                    await Future.delayed(const Duration(milliseconds: 600));
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    await Future.delayed(const Duration(milliseconds: 400));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PageTwo()));
                   },
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
