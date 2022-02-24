@@ -29,6 +29,7 @@ class _CounterScreenState extends State<CounterScreen> {
   int _countingPerDay = 0;
   int _countinPerWeek = 0;
   int _countingPerYear = 0;
+  bool _isAddButtonPressed = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,24 +40,30 @@ class _CounterScreenState extends State<CounterScreen> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        title: Text(
-          "Welcome ${user.fullName}",
-          style: const TextStyle(color: Colors.black, fontSize: 25),
-        ),
-        centerTitle: true,
         backgroundColor: Colors.grey.shade200,
         elevation: 0,
         actions: [
-          IconButton(
-            onPressed: () {
-              setState(() {
-                _countingPerDay = 0;
-              });
-            },
-            icon: const Icon(Icons.replay_outlined),
-            color: Colors.teal,
-            iconSize: 25,
-          ),
+          _isAddButtonPressed
+              ? IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _countingPerDay = 0;
+                    });
+                  },
+                  icon: const Icon(Icons.replay_outlined),
+                  color: Colors.teal,
+                  iconSize: 30,
+                )
+              : IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _isAddButtonPressed = true;
+                    });
+                  },
+                  icon: const Icon(Icons.add),
+                  color: Colors.teal,
+                  iconSize: 30,
+                ),
           const SizedBox(width: 10)
         ],
       ),
@@ -66,7 +73,17 @@ class _CounterScreenState extends State<CounterScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Flexible(child: Container(), flex: 1),
+              Flexible(child: Container(), flex: 1),
+              Text(
+                "Meditation Counter",
+                style: GoogleFonts.cagliostro(fontSize: 18),
+              ),
+              Text(
+                "Welcome ${user.fullName}",
+                style: GoogleFonts.cagliostro(
+                    fontSize: 38, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 30),
               Center(
                 child: InkWell(
                   borderRadius: BorderRadius.circular(200),
@@ -92,7 +109,8 @@ class _CounterScreenState extends State<CounterScreen> {
                       )),
                 ),
               ),
-              const SizedBox(height: 30)
+              const SizedBox(height: 30),
+              Flexible(child: Container(), flex: 1)
             ],
           ),
         ),
