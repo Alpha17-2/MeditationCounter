@@ -43,12 +43,7 @@ class _CounterScreenState extends State<CounterScreen> {
       appBar: AppBar(
         backgroundColor: Colors.grey.shade200,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu, size: 30, color: Colors.teal),
-          onPressed: () {
-            ZoomDrawer.of(context)!.toggle();
-          },
-        ),
+        iconTheme: IconThemeData(color: Colors.black54),
         actions: [
           _isAddButtonPressed
               ? IconButton(
@@ -74,6 +69,7 @@ class _CounterScreenState extends State<CounterScreen> {
           const SizedBox(width: 10)
         ],
       ),
+      drawer: ZoomDrawerWidget(),
       body: Container(
         child: SafeArea(
           child: Column(
