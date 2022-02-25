@@ -1,7 +1,4 @@
-import 'package:counter/pages/firstPage.dart';
-import 'package:counter/pages/login_page.dart';
 import 'package:counter/pages/pageFour.dart';
-import 'package:counter/pages/pageFourUsingFirebaseAuth.dart';
 import 'package:counter/pages/pageOne.dart';
 import 'package:counter/pages/pageTwo.dart';
 import 'package:counter/providers/userProvider.dart';
@@ -34,7 +31,7 @@ class MyApp extends StatelessWidget {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.active) {
               if (snapshot.hasData) {
-                return const CounterScreen();
+                return const ZoomDrawerWidget();
               } else if (snapshot.hasError) {
                 return Center(child: Text("${snapshot.error}"));
               }
