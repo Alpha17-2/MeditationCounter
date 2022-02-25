@@ -1,6 +1,8 @@
 import 'package:counter/models/user.dart' as model;
 import 'package:counter/providers/userProvider.dart';
+import 'package:counter/widgets/menuScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:provider/provider.dart';
@@ -27,8 +29,7 @@ class _CounterScreenState extends State<CounterScreen> {
 
   int _target = 100;
   int _countingPerDay = 0;
-  int _countinPerWeek = 0;
-  int _countingPerYear = 0;
+
   bool _isAddButtonPressed = false;
 
   @override
@@ -42,6 +43,12 @@ class _CounterScreenState extends State<CounterScreen> {
       appBar: AppBar(
         backgroundColor: Colors.grey.shade200,
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.menu, size: 30, color: Colors.teal),
+          onPressed: () {
+            ZoomDrawer.of(context)!.toggle();
+          },
+        ),
         actions: [
           _isAddButtonPressed
               ? IconButton(
@@ -90,8 +97,6 @@ class _CounterScreenState extends State<CounterScreen> {
                   onTap: () {
                     setState(() {
                       _countingPerDay++;
-                      _countinPerWeek++;
-                      _countingPerYear++;
                     });
                   },
                   child: CircularPercentIndicator(
@@ -115,6 +120,28 @@ class _CounterScreenState extends State<CounterScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+//MenuDrawer
+class ZoomDrawerWidget extends StatefulWidget {
+  const ZoomDrawerWidget({Key? key}) : super(key: key);
+
+  @override
+  _ZoomDrawerWidgetState createState() => _ZoomDrawerWidgetState();
+}
+
+class _ZoomDrawerWidgetState extends State<ZoomDrawerWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return ZoomDrawer(
+      backgroundColor: Colors.grey.shade200,
+      style: DrawerStyle.Style1,
+      menuScreen: const MenuScreen(),
+      mainScreen: const CounterScreen(),
+      angle: -12,
+      duration: Duration(milliseconds: 200),
     );
   }
 }
