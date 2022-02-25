@@ -1,7 +1,4 @@
-import 'package:counter/pages/firstPage.dart';
-import 'package:counter/pages/login_page.dart';
 import 'package:counter/pages/pageFour.dart';
-import 'package:counter/pages/pageFourUsingFirebaseAuth.dart';
 import 'package:counter/pages/pageOne.dart';
 import 'package:counter/pages/pageTwo.dart';
 import 'package:counter/providers/userProvider.dart';
